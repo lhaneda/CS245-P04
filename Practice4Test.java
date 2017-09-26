@@ -23,12 +23,13 @@ public class Practice4Test {
 		}
 	}
 	
-	
 	public boolean isPalindrome(String item) {
 		clearData();
-		for (int i = 0; i < item.length(); i++) {
-			stack.push(item.substring(i, i+1));
-			queue.enqueue(item.substring(i, i+1));
+		String str = item.replaceAll("\\s","").replaceAll("!", "").toLowerCase();
+		System.out.println(str);
+		for (int i = 0; i < str.length(); i++) {
+			stack.push(str.substring(i, i+1));
+			queue.enqueue(str.substring(i, i+1));	
 		}
 
 		while (! stack.empty() && ! queue.empty()) {
